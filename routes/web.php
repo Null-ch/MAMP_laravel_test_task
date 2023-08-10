@@ -32,6 +32,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/{category}/edit', App\Http\Controllers\Admin\Category\EditController::class)->name('admin.category.edit');
         Route::patch('/{category}', App\Http\Controllers\Admin\Category\UpdateController::class)->name('admin.category.update');
         Route::post('/activity', App\Http\Controllers\Admin\Category\CategoryActivityStatusController::class);
+        Route::post('/updateOrder', App\Http\Controllers\Admin\Category\CategoryOrderUpdateController::class);
     });
 
     Route::group(['prefix' => 'admin/posts'], function () {
@@ -42,6 +43,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/{post}/edit', App\Http\Controllers\Admin\Post\EditController::class)->name('admin.post.edit');
         Route::patch('/{post}', App\Http\Controllers\Admin\Post\UpdateController::class)->name('admin.post.update');
         Route::post('/activity', App\Http\Controllers\Admin\Post\PostActivityStatusController::class);
+        Route::post('/updateOrder', App\Http\Controllers\Admin\Post\PostOrderUpdateController::class);
     });
 
     Route::group(['prefix' => 'admin/users'], function () {
@@ -52,5 +54,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/{user}/edit', App\Http\Controllers\Admin\User\EditController::class)->name('admin.user.edit');
         Route::patch('/{user}', App\Http\Controllers\Admin\User\UpdateController::class)->name('admin.user.update');
         Route::post('/activity', App\Http\Controllers\Admin\User\UserActivityStatusController::class);
+        Route::post('/updateOrder', App\Http\Controllers\Admin\User\UserOrderUpdateController::class);
     });
 });

@@ -23,6 +23,7 @@ class Post extends Model
         'isActive',
         'slug',
         'preview_image',
+        'order',
     ];
 
     public function category() {

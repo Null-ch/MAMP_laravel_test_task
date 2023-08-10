@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('content');
             $table->unsignedBigInteger('category_id')->nullable();
             $table->boolean('isActive')->default(true);
+            $table->integer('order')->default(0);
             $table->timestamps();
 
             $table->index('category_id', 'post_category_idx');

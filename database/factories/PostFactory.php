@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class PostFactory extends Factory
 {
+    private static $order = 1;
     protected $model = Post::class;
     /**
      * Define the model's default state.
@@ -22,13 +23,16 @@ class PostFactory extends Factory
     public function definition(): array
     {
         $title = $this->faker->sentence(3);
+        
+        
         return [
             'title' => $title,
             'content' => $this->faker->text,
             'slug' => Str::slug($title, '-'),
             'preview_image' => $this->faker->imageUrl('public/storage/images', 300, 200),
             'category_id' => Category::get()->random()->id,
-            'isActive' => true
+            'order' => self::$order++,
+            'isActive' => true,
         ];
     }
 }

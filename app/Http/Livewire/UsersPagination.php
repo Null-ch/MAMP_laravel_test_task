@@ -45,7 +45,7 @@ class UsersPagination extends Component
             $users->orWhere('id', 'like', "%" . $this->searchTerm . "%");
         }
 
-        $users = $users->paginate(10);
+        $users = $users->get();
 
         return view('livewire.users-pagination', [
             'users' => $users,

@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class CategoryFactory extends Factory
 {
+    private static $order = 1;
     /**
      * Define the model's default state.
      *
@@ -18,6 +19,7 @@ class CategoryFactory extends Factory
     {
         return [
             'title' => $this->faker->word,
+            'order' => self::$order++,
             'isActive' => true,
         ];
     }

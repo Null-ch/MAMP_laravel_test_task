@@ -41,29 +41,30 @@
                                         </tr>
                                         <tr>
                                             <td>{{ $post->id }}</td>
-                                        <td>{{ $post->title }}</td>
-                                        <td>{{ $post->slug }}</td>
-                                        <td>{{ Str::limit($post->content, 20) }}</td>
-                                        <td>{{ $post->category->title}}</td>
-                                        <td><img src="{{ url('storage/' . $post->preview_image) }}" alt="preview_image" height="real_height" width="real_width"
-                                            onload="resizeImg(this, 60, 100);"></td>
-                                        <td>{{ $post->created_at }}</td>
-                                        <td>{{ $post->updated_at }}</td>
-                                        <td>
-                                            <div class="md-form">
-                                                <div class="material-switch">
-                                                    <input id="switch-primary-{{ $post->id }}"
-                                                        value="{{ $post->id }}" name="toggle" type="checkbox"
-                                                        {{ $post->isActive === 1 ? 'checked' : '' }}>
-                                                    <label for="switch-primary-{{ $post->id }}"
-                                                        class="btn-success"></label>
+                                            <td>{{ $post->title }}</td>
+                                            <td>{{ $post->slug }}</td>
+                                            <td>{{ $post->content }}</td>
+                                            <td>{{ $post->category->title }}</td>
+                                            <td><img src="{{ url('storage/' . $post->preview_image) }}" alt="preview_image"
+                                                    height="real_height" width="real_width"
+                                                    onload="resizeImg(this, 60, 100);"></td>
+                                            <td>{{ $post->created_at }}</td>
+                                            <td>{{ $post->updated_at }}</td>
+                                            <td>
+                                                <div class="md-form">
+                                                    <div class="material-switch">
+                                                        <input id="switch-primary-{{ $post->id }}"
+                                                            value="{{ $post->id }}" name="toggle" type="checkbox"
+                                                            {{ $post->isActive === 1 ? 'checked' : '' }}>
+                                                        <label for="switch-primary-{{ $post->id }}"
+                                                            class="btn-success"></label>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center"><a href="{{ route('admin.post.show', $post->id) }}"><i
-                                                    class="far fa-eye"></i></a></td>
-                                        <td class="text-center"><a href="{{ route('admin.post.edit', $post->id) }}"
-                                                class="text-success"><i class="fas fa-pencil-alt"></i></a></td>
+                                            </td>
+                                            <td class="text-center"><a href="{{ route('admin.post.show', $post->id) }}"><i
+                                                        class="far fa-eye"></i></a></td>
+                                            <td class="text-center"><a href="{{ route('admin.post.edit', $post->id) }}"
+                                                    class="text-success"><i class="fas fa-pencil-alt"></i></a></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -95,11 +96,11 @@
             });
         });
     </script>
-<script type="text/javascript">
-    function resizeImg(img, height, width) {
-        img.height = height;
-        img.width = width;
-    }
+    <script type="text/javascript">
+        function resizeImg(img, height, width) {
+            img.height = height;
+            img.width = width;
+        }
     </script>
     <style type="text/css">
         .sorticon {

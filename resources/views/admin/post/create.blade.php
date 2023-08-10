@@ -5,11 +5,11 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-6 ml-2 p-2">
                         <h3>Добавление статьи</h3>
                         <form action="{{ route('admin.post.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="form-group w-50">
+                            <div class="form-group w-20">
                                 <label>Название</label>
                                 <input type="text" class="form-control" name="title" placeholder="Название статьи"
                                     value="{{ old('title') }}">
@@ -17,7 +17,7 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-group w-50">
+                            <div>
                                 <label>Слаг</label>
                                 <input type="text" class="form-control" name="slug" placeholder="Слаг"
                                     value="{{ old('slug') }}">
@@ -25,14 +25,14 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-group w-50">
+                            <div>
                                 <label>Содержимое статьи</label>
-                                <textarea type="text" id="summernote" name="content">{{ old('content') }}</textarea>
+                                <textarea class="form-control summernote" type="text" id="summernote" name="content">{{ old('content') }}</textarea>
                                 @error('content')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-group w-50">
+                            <div>
                                 <label for="exampleInputFile">Добавление превью</label>
                                 <div class="input-group">
                                     <div class="custom-file">
@@ -47,7 +47,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="form-group w-50">
+                            <div>
                                 <label>Выберите категорию</label>
                                 <select name="category_id" class="form-control">
                                     @foreach ($categories as $category)
@@ -60,7 +60,7 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <input type="submit" class="btn btn-primary" value="Добавить">
                             </div>
                         </form>
