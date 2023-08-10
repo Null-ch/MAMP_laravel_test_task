@@ -24,8 +24,8 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div>
-                                <label>Содержимое статьи</label>
+                            <label class="mt-2">Содержимое статьи</label>
+                            <div >
                                 <textarea class="form-control summernote" type="text" id="summernote" name="content">{{ old('content') }}</textarea>
                                 @error('content')
                                     <div class="text-danger">{{ $message }}</div>
@@ -68,4 +68,19 @@
             </div>
         </section>
     </div>
+    <script>
+        $('#summernote').summernote({
+          placeholder: 'Введите текст',
+          tabsize: 2,
+          height: 120,
+          toolbar: [
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+          ]
+        });
+      </script>
 @endsection

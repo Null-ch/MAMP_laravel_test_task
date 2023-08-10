@@ -3,13 +3,13 @@
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
+                <div class="row mb-2 ml-2">
+                    <div>
                         <h3>Пользователи</h3>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-1 mb-3 mt-3">
+                    <div class="col-1 mb-3 mt-3 ml-2">
                         <a href="{{ route('admin.user.create') }}" class="btn btn-block btn-primary mb 3">Добавить </a>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
         <section class="content">
             <div>
                 <div class="row">
-                    <div class="col-15">
+                    <div class="col-9 ml-4">
                         <div class="card">
                             <div class="card-body p-3">
                                 <table id="table" class="table-responsive fixed-table-body table-bordered">

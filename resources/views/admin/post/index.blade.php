@@ -3,13 +3,13 @@
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
+                <div class="row mb-2 ml-2">
+                    <div>
                         <h3>Статьи</h3>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-1 mb-3 mt-3">
+                    <div class="col-1 mb-3 mt-3 ml-2">
                         <a href="{{ route('admin.post.create') }}" class="btn btn-block btn-primary mb 3">Добавить </a>
                     </div>
                 </div>
@@ -17,7 +17,7 @@
         </div>
         <section class="content">
             <div class="row" id="row">
-                <div class="col-15">
+                <div class="col-11 p-2 ml-4">
                     <div class="card">
                         <div class="card-body table-responsive p-3">
                             <table id="table" class="table table-responsive table-bordered">
