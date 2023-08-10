@@ -3,7 +3,6 @@
     <div class="content-wrapper">
         <section class="content">
             <div class="container-fluid">
-                <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-6 ml-2 p-2">
                         <h3>Добавление статьи</h3>

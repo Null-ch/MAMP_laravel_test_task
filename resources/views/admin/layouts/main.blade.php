@@ -34,93 +34,89 @@
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <!-- livewire-sortable -->
     <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script>
-
+    <!-- datatables -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.css" />
     <link rel="stylesheet" type="text/css"
         href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <style type="text/css">
-            .sorticon {
-                visibility: hidden;
-                color: darkgray;
-            }
-    
-            .sort:hover .sorticon {
-                visibility: visible;
-            }
-    
-            .sort:hover {
-                cursor: pointer;
-            }
-    
-            .material-switch>input[type="checkbox"] {
-                display: none;
-            }
-    
-            .material-switch>input[type="checkbox"] {
-                display: none;
-            }
-    
-            .material-switch>label {
-                cursor: pointer;
-                height: 0px;
-                position: relative;
-                top: 2px;
-                width: 40px;
-            }
-    
-            .material-switch>label::before {
-                background: rgb(0, 0, 0);
-                box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
-                border-radius: 8px;
-                content: '';
-                height: 16px;
-                margin-top: -8px;
-                position: absolute;
-                opacity: 0.3;
-                transition: all 0.4s ease-in-out;
-                width: 40px;
-            }
-    
-            .material-switch>label::after {
-                background: rgb(255, 255, 255);
-                border-radius: 16px;
-                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-                content: '';
-                height: 24px;
-                left: -4px;
-                margin-top: -8px;
-                position: absolute;
-                top: -4px;
-                transition: all 0.3s ease-in-out;
-                width: 24px;
-            }
-    
-            .material-switch>input[type="checkbox"]:checked+label::before {
-                background: inherit;
-                opacity: 0.5;
-            }
-    
-            .material-switch>input[type="checkbox"]:checked+label::after {
-                background: inherit;
-                left: 20px;
-            }
-        </style>
+    <style type="text/css">
+        .sorticon {
+            visibility: hidden;
+            color: darkgray;
+        }
+
+        .sort:hover .sorticon {
+            visibility: visible;
+        }
+
+        .sort:hover {
+            cursor: pointer;
+        }
+
+        .material-switch>input[type="checkbox"] {
+            display: none;
+        }
+
+        .material-switch>input[type="checkbox"] {
+            display: none;
+        }
+
+        .material-switch>label {
+            cursor: pointer;
+            height: 0px;
+            position: relative;
+            top: 2px;
+            width: 40px;
+        }
+
+        .material-switch>label::before {
+            background: rgb(0, 0, 0);
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            content: '';
+            height: 16px;
+            margin-top: -8px;
+            position: absolute;
+            opacity: 0.3;
+            transition: all 0.4s ease-in-out;
+            width: 40px;
+        }
+
+        .material-switch>label::after {
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            content: '';
+            height: 24px;
+            left: -4px;
+            margin-top: -8px;
+            position: absolute;
+            top: -4px;
+            transition: all 0.3s ease-in-out;
+            width: 24px;
+        }
+
+        .material-switch>input[type="checkbox"]:checked+label::before {
+            background: inherit;
+            opacity: 0.5;
+        }
+
+        .material-switch>input[type="checkbox"]:checked+label::after {
+            background: inherit;
+            left: 20px;
+        }
+    </style>
     @livewireStyles
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-
-        <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__shake" src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo"
                 height="60" width="60">
         </div>
-
-        <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <!-- Left navbar links -->
             <div class="col-12 d-flex justify-content-between">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -141,10 +137,6 @@
                 </ul>
             </div>
         </nav>
-        <!-- /.navbar -->
-
-        <!-- Main Sidebar Container -->
-
         @include('admin.includes.sidebar')
         @yield('content')
         @include('admin.includes.footer')
@@ -202,7 +194,6 @@
         </style>
         <script>
             $(function() {
-                //Initialize Select2 Elements
                 $('.select2bs4').select2({
                     theme: 'bootstrap4'
                 })

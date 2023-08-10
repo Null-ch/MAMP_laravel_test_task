@@ -15,7 +15,6 @@
                 </div>
             </div>
         </div>
-
         <section class="content">
             <div>
                 <div class="row">
@@ -119,7 +118,18 @@
     </script>
     <script type="text/javascript">
         $(function() {
-            $("#table").DataTable();
+            $("#table").DataTable({
+                "columnDefs": [{
+                    "targets": [6, 7, 8],
+                    "orderable": false
+                }],
+                "order": [
+                    [0, 'asc']
+                ],
+                "paging": true,
+                "searching": true,
+                "info": true
+            });
 
             $("#tablecontents").sortable({
                 items: "tr",

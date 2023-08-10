@@ -3,7 +3,6 @@
     <div class="content-wrapper">
         <section class="content">
             <div class="container-fluid">
-                <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-6 ml-2 p-2">
                         <h3>Добавление статьи</h3>
@@ -36,7 +35,8 @@
                             <div>
                                 <label for="exampleInputFile">Добавление превью</label>
                                 <div class="w-50 mb-3 mt-2">
-                                    <img src="{{ url('storage/' . $post->preview_image) }}" alt="preview_image" class="w-50">
+                                    <img src="{{ url('storage/' . $post->preview_image) }}" alt="preview_image"
+                                        class="w-50">
                                 </div>
                                 <div class="input-group">
                                     <div class="custom-file">

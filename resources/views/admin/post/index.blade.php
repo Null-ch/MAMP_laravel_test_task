@@ -16,11 +16,11 @@
             </div>
         </div>
         <section class="content">
-            <div class="row">
-                <div class="col-11">
+            <div class="row" id="row">
+                <div class="col-15">
                     <div class="card">
                         <div class="card-body table-responsive p-3">
-                            <table id="table" class="table table-bordered">
+                            <table id="table" class="table table-responsive table-bordered">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -44,7 +44,8 @@
                                             <td>{{ $post->slug }}</td>
                                             <td>{{ Str::limit($post->content, 20) }}</td>
                                             <td>{{ $post->category_id }}</td>
-                                            <td><img url="{{ asset('storage/' . "$post->preview_image")}}" alt="preview_image"
+                                            <td class="col-2"><img id="yourImgId"
+                                                    src="{{ url('storage/' . $post->preview_image) }}" alt="preview_image"
                                                     height="real_height" width="real_width"
                                                     onload="resizeImg(this, 60, 100);"></td>
                                             <td>{{ $post->created_at }}</td>
@@ -74,7 +75,12 @@
             </div>
         </section>
     </div>
-
+    <script type="text/javascript">
+        function resizeImg(img, height, width) {
+            img.height = height;
+            img.width = width;
+        }
+    </script>
     <script>
         $('input[name=toggle]').change(function() {
             var mode = $(this).prop('checked');
@@ -100,7 +106,7 @@
         $(function() {
             $("#table").DataTable({
                 "columnDefs": [{
-                    "targets": [ 8, 9, 10],
+                    "targets": [8, 9, 10],
                     "orderable": false
                 }],
                 "order": [
