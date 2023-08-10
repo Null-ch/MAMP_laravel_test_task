@@ -1,8 +1,16 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://inamr.ru/" target="_blank"><img src="https://github.com/Null-ch/MAMP_laravel_test_task/assets/65172872/7db8465e-37cc-48b7-9e0b-3884cc7aeec7" width="400" alt="IAMR Logo"></a></p>
+
 
 # ОПИСАНИЕ ПРОЕКТА
 
-В данном проекте реализуется создание блога с админ панелью на Laravel.
+В данном проекте реализуется Тестовое задание на позицию Backend-разработчика (Junior):
+- REST API
+- Административная часть файла
+- Управление содержимым с помощью WYSIWYG-редактора (<a href="https://summernote.org/" target="_blank">summernote</a>)
+- Плагин для деактивации записей (toggle switch)
+- Плагин для изменения порядка сортировки
+
 Данные хранятся в подключенной БД MySQL
 
 # ИНСТАЛЯЦИЯ
