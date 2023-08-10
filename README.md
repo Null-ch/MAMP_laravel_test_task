@@ -9,6 +9,7 @@
 
 Склонируйте проект в директорию с сервером:
 
+`https://github.com/Null-ch/MAMP_laravel_test_task.git`
 
 Затем, открыв из папки проекта консоль, введите команду для установки пакетов Laravel:
 
@@ -36,7 +37,7 @@
 
 `php artisan migrate --seed`
 
-В той же консоли для запуска сайта по адресу `http://localhost:8000` введите команду:
+В той же консоли для запуска сайта по адресу `http://127.0.0.1:8000` введите команду:
 
 `php artisan serve`
 
@@ -50,6 +51,11 @@
 `php artisan storage:link`
 
 Откройте сайт в браузере по адресу  `http://localhost:8000`
+## Задание
+<details>
+<summary> ТЗ </summary>
+<img src="https://github.com/Null-ch/MAMP_laravel_test_task/assets/65172872/92845b63-b54d-4224-aca7-1c1bc8d9a5cf">
+</details> 
 
 ## API:
 
@@ -78,12 +84,26 @@
 'api//v1/getPostsBySlug', метод POST, возвращает статьи по заданному слагу
 Передается параметр slug (категории). Если slug статьи не был передан - возвращает 10 постов с первой страницы
 
-## About
-<details> 
-<summary> Обзор текущего наполнения </summary>
+## Обзор наполнения
 
-<h4 align="center">Админ панель ЛК</h4>
+<summary> <h4> Главная </h4> </summary>
+<img src="https://github.com/Null-ch/MAMP_laravel_test_task/assets/65172872/e851658d-e2cd-47a9-87d1-e87b3ba35371">
 
-Демонстрация рабочего CRUD 
+<summary> <h4> Раздел админ панели "Пользователи" </h4> </summary>
 
-</details> 
+<img src="https://github.com/Null-ch/MAMP_laravel_test_task/assets/65172872/39e418e7-4e8a-4492-95ac-c2e5234cbc29">
+<img src="https://github.com/Null-ch/MAMP_laravel_test_task/assets/65172872/763c77a9-b21e-4f52-b3f9-262a28258a89">
+<img src="https://github.com/Null-ch/MAMP_laravel_test_task/assets/65172872/15ec51f5-c11b-48d8-b027-eb06e569981f">
+
+<summary> <h4> Раздел админ панели "Категории" </h4> </summary>
+
+<img src="https://github.com/Null-ch/MAMP_laravel_test_task/assets/65172872/17f26b32-35a5-4a1b-8384-e42719f41eff">
+<img src="https://github.com/Null-ch/MAMP_laravel_test_task/assets/65172872/c4ffe2be-3fdc-4d6d-a98b-97ce9c37ebda">
+<img src="https://github.com/Null-ch/MAMP_laravel_test_task/assets/65172872/08be09db-11f1-47cd-8699-1061f4afbb24">
+
+<summary> <h4> Раздел админ панели "Статьи" </h4> </summary>
+
+<img src="https://github.com/Null-ch/MAMP_laravel_test_task/assets/65172872/9b4c69d1-94ae-4a7b-9a41-c5b234049167">
+<img src="https://github.com/Null-ch/MAMP_laravel_test_task/assets/65172872/62be18db-af9a-4591-9de9-fd47d0430288">
+<img src="https://github.com/Null-ch/MAMP_laravel_test_task/assets/65172872/a31cb356-0ffd-47eb-9659-8f8a81e4b389">
+
