@@ -16,14 +16,19 @@ class PostsByCategoryController extends BaseController
         if ($posts->isEmpty()) {
             $data = ["status" => "404", 'message' => 'Данные отсутствуют'];
             return response()->json($data);
-        } elseif ($request->id == null && !($posts->isEmpty())) {
+        } elseif ($request->id == null && !($posts->count() < 1)) {
             $posts = Post::paginate(10);
             $data = ["status" => "200", 'Все статьи' => $posts];
             return response()->json($data);
         } else {
-            $postsByCategory = $posts->where('category_id', '=', $request->id);
-            $data = ["status" => "200", 'Все статьи' => $postsByCategory];
-            return response()->json($data);
+            $postsByCategory = $posts->where('slug', '=', $request->slug);
+            if ($postsByCategory->count() < 1) {
+                $data = ["status" => "404", 'message' => 'Статьи с такой категорией отсутствуют'];
+                return response()->json($data);
+            } else {
+                $data = ["status" => "200", 'Все статьи' => $postsByCategory];
+                return response()->json($data);
+            }
         }
     }
 }

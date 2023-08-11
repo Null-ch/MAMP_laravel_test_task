@@ -16,14 +16,19 @@ class PostsBySlugController extends BaseController
         if ($posts->isEmpty()) {
             $data = ["status" => "404", 'message' => 'Данные отсутствуют'];
             return response()->json($data);
-        } elseif ($request->slug == null && !($posts->isEmpty())) {
+        } elseif ($request->slug == null && !($posts->count() < 1)) {
             $posts = Post::paginate(10);
             $data = ["status" => "200", 'Все статьи' => $posts];
             return response()->json($data);
         } else {
-            $postsByCategory = $posts->where('slug', '=', $request->slug);
-            $data = ["status" => "200", 'Все статьи' => $postsByCategory];
-            return response()->json($data);
+            $postsBySlug = $posts->where('slug', '=', $request->slug);
+            if ($postsBySlug->count() < 1) {
+                $data = ["status" => "404", 'message' => 'Статьи с таким слагом отсутствуют'];
+                return response()->json($data);
+            } else {
+                $data = ["status" => "200", 'Все статьи' => $postsBySlug];
+                return response()->json($data);
+            }
         }
     }
 }
