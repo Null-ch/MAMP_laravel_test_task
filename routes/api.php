@@ -20,8 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Auth::routes();
 
 
-Route::post('api/v1/register', [App\Http\Controllers\Api\v1\RegisterController::class, 'register']);
-Route::post('api/v1/login', [App\Http\Controllers\Api\v1\LoginController::class, 'login']);
+Route::post('/v1/register', [App\Http\Controllers\Api\v1\RegisterController::class, 'register']);
+Route::post('/v1/login', [App\Http\Controllers\Api\v1\LoginController::class, 'login']);
 Route::middleware('auth:api')->post('/v1/getPosts', App\Http\Controllers\Api\v1\PostsIndexController::class);
 Route::middleware('auth:api')->get('/v1/getCategories', App\Http\Controllers\Api\v1\CategoriesIndexController::class);
 Route::middleware('auth:api')->post('/v1/getPostsByCategory', App\Http\Controllers\Api\v1\PostsByCategoryController::class);
