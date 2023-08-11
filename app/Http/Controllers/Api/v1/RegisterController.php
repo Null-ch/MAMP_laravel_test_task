@@ -30,6 +30,7 @@ class RegisterController extends BaseController
         $user = User::create($input);
         $success['errors'] =  null;
         $success['name'] =  $user->name;
-        return $this->sendResponse($success, 'Вы успешно зарегистрированы!');
+        $success['name'] =  $user->email;
+        return $this->sendResponse($success, 'Вы успешно зарегистрированы! Используйте свой пароль и email для получения токена');
     }
 }

@@ -12,7 +12,7 @@ class LoginController extends BaseController
     public function login(Request $request)
     {
         $credentials = [
-            'email' => $request->login,
+            'email' => $request->email,
             'password' => $request->password,
         ];
 
