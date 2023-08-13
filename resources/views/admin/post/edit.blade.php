@@ -27,7 +27,8 @@
                             </div>
                             <div>
                                 <label>Содержимое статьи</label>
-                                <textarea class="form-control summernote" type="text" id="summernote" name="content">{{ $post->content }}</textarea>
+                                {{-- Данный способ позволяет реализовать вставку  и отображение изображений в тело статьи, но в ущерб безопасности. Такой вариант нельзя применять на рабочих проектах --}}
+                                <textarea class="form-control summernote" type="text" id="summernote" name="content">{!! $post->content !!}</textarea>
                                 @error('content')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror

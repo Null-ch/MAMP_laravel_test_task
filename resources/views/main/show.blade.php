@@ -11,7 +11,7 @@
             <section class="post-content">
                 <div class="row mb-5 justify-content-center">
                     <div class="col-md-4 mb-3" data-aos="fade-up">
-                        <img src="{{ url('storage/' . $post->main_image) }}" alt="blog post" class="img-fluid">
+                        <img src="{{ url('storage/' . $post->preview_image) }}" alt="blog post" class="img-fluid">
                     </div>
                 </div>
                 <div class="row justify-content-center">

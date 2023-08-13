@@ -42,8 +42,9 @@
                                             <td class="pl-3">{{ $post->id }}</td>
                                             <td>{{ $post->title }}</td>
                                             <td>{{ $post->slug }}</td>
-                                            <td>{{ Str::limit($post->content, 20) }}</td>
-                                            <td>{{ $post->category_id }}</td>
+                                            {{-- Данный способ позволяет реализовать вставку  и отображение изображений в тело статьи, но в ущерб безопасности. Такой вариант нельзя применять на рабочих проектах --}}
+                                            <td>{!! Str::limit($post->content, 20) !!}</td>
+                                            <td>{{ $post->category->title }}</td>
                                             <td class="col-2"><img id="yourImgId"
                                                     src="{{ url('storage/' . $post->preview_image) }}" alt="preview_image"
                                                     height="real_height" width="real_width"

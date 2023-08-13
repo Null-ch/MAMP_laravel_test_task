@@ -23,7 +23,7 @@ class StroreRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-            'content' => 'required|string',
+            'content' => 'required',
             'preview_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,WEBP',
             'category_id' => 'required|exists:categories,id',
             'slug' => 'required|string',
@@ -34,7 +34,7 @@ class StroreRequest extends FormRequest
         return [
             'title.required' => 'Это поле обязательно для заполнения',
             'title.string' => 'Данные не являются строкой',
-            'content.string' => 'Данные не являются строкой',
+            // 'content.string' => 'Данные не являются строкой',
             'content.required' => 'Это поле обязательно для заполнения',
             'preview_image.required' => 'Это поле обязательно для заполнения',
             'preview_image.file' => 'Файл не выбран',

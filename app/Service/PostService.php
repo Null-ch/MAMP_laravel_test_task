@@ -14,7 +14,8 @@ class PostService
         try {
             DB::beginTransaction();
 
-            $data['content'] = strip_tags($data['content']);
+            // Для обеспечения безопасности и защиты от XSS и инъекций рекомендуется удалять из содержимого теги, но в данном случае это позволяет вставлять и отображать изображения в теле сообщения
+            // $data['content'] = strip_tags($data['content']);
             $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
             $post = Post::firstOrCreate($data);
             DB::commit();
