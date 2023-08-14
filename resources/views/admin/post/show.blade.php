@@ -36,7 +36,7 @@
                                             <td>{{ $post->title }}</td>
                                             <td>{{ $post->slug }}</td>
                                             {{-- Данный способ позволяет реализовать вставку  и отображение изображений в тело статьи, но в ущерб безопасности. Такой вариант нельзя применять на рабочих проектах --}}
-                                            <td style="width: 150px">{!! $post->content !!}</td>
+                                            <td style="max-width:150px; overflow-x: scroll;overflow-y: hidden;">{!! $post->content !!}</td>
                                             <td>{{ $post->category->title }}</td>
                                             <td><img src="{{ url('storage/' . $post->preview_image) }}" alt="preview_image"
                                                     height="real_height" width="real_width"
